@@ -5,10 +5,40 @@ Show them when they receive the class 'on'
 Hide them when they receive the class 'off'
 Feel free to adjust the defaults to your needs.
 ********************************************** */
+:root{
+	--softblack: #181A18;
+	--alarm: radial-gradient(circle, rgba(255,0,0,0.8281687675070029) 0%, rgba(255,0,0,0.20632002801120453) 100%);
+	--piep: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,0.517266281512605) 43%, rgba(255,255,255,0.13071165966386555) 100%);
+
+}
+
+body{
+	margin: 0;
+	display: grid;
+	grid-template-columns: 1fr auto 1fr;
+	grid-template-rows: 1fr auto auto 1fr;
+	height: 100vh;
+	background-color: #181A18;
+	justify-items: center;
+}
+
+#closed-captions{
+	grid-column-start: 2;
+	grid-row-start: 3;
+	grid-column-end: 3;
+	display: flex;
+ 	justify-content: center;
+  	align-items: center;
+	margin: 20px 0px 0px 0px;
+}
+
 #closed-captions p {
 	opacity: 0;
 	transition: .05s;
 	position: absolute;
+	color: white;
+	font-size: 20px;
+	z-index: 9999;
 }
 #closed-captions .on {
 	opacity: 1;
@@ -17,11 +47,53 @@ Feel free to adjust the defaults to your needs.
 	transition: .2s;
 	opacity: 0;
 }
-.voice1 {
-	font-style: italic;
+
+iframe{
+	grid-column-start: 2;
+	grid-row-start: 2;
+	width: 850px;
+	height: 480px;
+	/* clip-path: inset(4.8em 0); */
 }
+
+
+.voice1 {
+	font-family: "Brenner Mono"; 
+	font-style: Normal; 
+}
+
+.voice1normal{
+	font-weight: 400;
+}
+
+.voice1strict{
+	font-weight: 600;
+}
+
+
 .voice2 {
-	font-weight: bold;
+	font-family: "Brenner Slab Regular";
+	font-size: 25px;
+}
+
+.voice3{
+	font-family: "Brenner"; 
+	font-style: Normal; 
+	font-weight: 800;
+}
+
+.voice4{
+	font-family: "Brenner Sans"; 
+	font-style: Normal; 
+	font-weight: 400;
+}
+
+/* Test 2 */
+
+.p50.on span:nth-of-type(8), .p52.on span:nth-of-type(15), .p54.on span:nth-of-type(1), .p61.on span:nth-of-type(9), .p63.on span:nth-of-type(9) {
+	font-family: "Brenner Mono"; 
+	font-style: Normal; 
+	font-weight: 600;
 }
 
 /* **********************************************
@@ -32,6 +104,8 @@ The first paragraph, with extended timing for
 	spoken.
 You probably want to change the styling.
 ********************************************** */
+
+/*
 .p0 span {
 	opacity: 0;
 	font-family: brenner;
@@ -104,6 +178,8 @@ You probably want to change the styling.
 	font-size: 200px;
 }
 
+*/
+
 /* **********************************************
 Sounds.
 	You can style the whole body, or you can 
@@ -111,9 +187,72 @@ Sounds.
 	a sound starts.
 *********************************************  */
 
+.sound2:before {
+	content: '';
+	background-image: var(--alarm);
+	opacity: 0;
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	z-index: -1;
+	animation: alarm .5s ease-in-out 0s 2;
+}
+
+@keyframes alarm {
+	0% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	100%{
+		opacity: 0;
+	}
+}
+
+.sound2 iframe{
+
+	animation: zoom .5s ease-in-out 0s 2;
+}
+
+@keyframes zoom {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.1);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+.sound10:before {
+	content: '';
+	background-image: var(--piep);
+	opacity: 0;
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	z-index: -1;
+	animation: piep 41s ease-in-out 0s 1;
+}
+
+@keyframes piep {
+	0% {
+		opacity: 0;
+	}
+	99% {
+		opacity: 1;
+	}
+	100%{
+		opacity: 0;
+	}
+}
+
+
 /* The moment the class .sound1 is added to the body, the background is yellow */
 .sound1 {
-	background: yellow;
 }
 
 iframe {
@@ -121,5 +260,4 @@ iframe {
 }
 /* The moment the class .sound1 is added to the body, the movie makes a turn */
 .sound1 iframe {
-	transform: rotate(1turn);
 }

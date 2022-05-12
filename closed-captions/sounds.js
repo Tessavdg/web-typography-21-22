@@ -2,6 +2,7 @@
 // Op die mommenten komt er een class op de body.
 sounds = [
 	0,
+	1,
 	9,
 	12,
 	15,
@@ -11,5 +12,6 @@ sounds = [
 	31,
 	32,
 	34,
-	86
+	86,
+	88,
 ];
