@@ -44,15 +44,8 @@ Na feedback van Sterre (een 3e jaars Creative Business student) heb ik nog een a
 ## Bronnenlijst
 
 <details open>
-<summary>continu bijhouden terwijl je werkt</summary>
 
-Nb. Wees specifiek ('css-tricks' als bron is bijv. niet specifiek genoeg).
-
-1. https://www.mariowiki.com/Invincible_Mario
-2. https://www.youtube.com/watch?v=iBG1roysT5A&t=974s
-3. https://www.w3schools.com/howto/howto_js_sidenav.asp
-4. https://github.com/alvarotrigo/fullPage.js/
-5. https://css-tricks.com/using-css-cursors/
-
+1. https://tenor.com/search/dark-sky-clouds-gifs
+2. https://codepen.io/cbanlawi/pen/xxRBeMY
 
 </details>
